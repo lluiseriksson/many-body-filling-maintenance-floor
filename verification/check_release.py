@@ -37,6 +37,9 @@ def main() -> None:
         r"\begin{lemma}[Local spectral window]",
         r"W_{\mathrm{leak}}^{\mathrm{int}}",
         "The theorem deliberately claims a perturbative neighborhood",
+        r"\mathcal E_P\widetilde{\cL}_\ell",
+        "complete Lindblad dissipator",
+        r"\liminf_{\ell\to\infty}\epsilon_\ell>0",
     ]
     for token in required:
         require(token in tex, f"missing source invariant: {token}")

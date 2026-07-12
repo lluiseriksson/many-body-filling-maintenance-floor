@@ -309,12 +309,30 @@ Fix a refresh period $0<\tau\le\tau_0$.  Let
  P_{\ell,\tau}
  =\frac{F(\rho_\ell)-F(T_\tau^{(\ell)}\rho_\ell)}{\tau}.
 \]
-We now make the uniformity assumptions precise.  The code projector $P=P_{L,\ell}$ is assumed to be a sum of complete spectral projections of $H_\ell$, separated from $Q=1-P$ by an isolated band.  Thus the Davies dynamics preserves the $P\oplus Q$ block decomposition even in the presence of degeneracies.  We work in the interaction picture, where the Hamiltonian commutator drops out of both $q_\ell(t)=\Tr[Q\rho_\ell(t)]$ and the dissipative trace-norm estimates.  The exactly filtered restriction is
+We now make the uniformity assumptions precise.  The code projector $P=P_{L,\ell}$ is assumed to be a sum of complete spectral projections of $H_\ell$, separated from $Q=1-P$ by an isolated band.  This spectral condition alone does \emph{not} imply invariance of the $P\oplus Q$ block algebra: a single degenerate Bohr block can map two code energies into opposite blocks.  We therefore impose the independent compatibility condition
+\begin{equation}\label{eq:blockcompatibility}
+ \mathcal E_P\widetilde{\cL}_\ell
+ =\widetilde{\cL}_\ell\mathcal E_P,
+ \qquad
+ \mathcal E_P(X)=PXP+QXQ.
+\end{equation}
+Equivalently for the argument below, the block-diagonal algebra $P\mathcal B P\oplus Q\mathcal B Q$ is invariant and the off-diagonal block does not feed into it.  A sufficient, directly checkable condition is that, for every $\omega$, each source block is mapped wholly into one target block: $A_{\ell,\omega}P$ lies either in $P\cH$ or in $Q\cH$, and independently $A_{\ell,\omega}Q$ lies either in $P\cH$ or in $Q\cH$.  The logical-line/leakage-frequency separation and rail-number rules verify the outgoing $P$ condition in the filled-SSH model; the full condition on the reachable $Q$ sector remains an explicit restriction on the Davies/filter construction.  We do not infer it from $[P,H_\ell]=0$.
+
+We work in the interaction picture, where the Hamiltonian commutator drops out of both $q_\ell(t)=\Tr[Q\rho_\ell(t)]$ and the dissipative trace-norm estimates.  Partition the Bohr frequencies into retained logical channels $\Omega_{\log}$ and tail channels $\Omega_{\mathrm{tail}}$.  The exact-filter generator $\widetilde{\cL}_\ell^{(0)}$ is defined by deleting the \emph{complete Lindblad dissipator} $\D[J_{\ell,\omega}]$, including its anticommutator, for every $\omega\in\Omega_{\mathrm{tail}}$.  It is therefore a trace-preserving GKLS generator, not a truncated jump term.  We assume that it also obeys \eqref{eq:blockcompatibility}.  Its logical restriction is
 \[
  P\widetilde{\cL}_\ell^{(0)}(PXP)P
  =w_{\ell,\mathrm{far}}^2\cL_{\log,0}(X),
 \]
 and the faithful logical target has a normalized entropy-production coefficient bounded below independently of $\ell$.
+
+\paragraph{Why the block criterion is sufficient.}
+The Davies relation and its zero-frequency consequence are
+\[
+ [H_\ell,A_{\ell,\omega}]=-\omega A_{\ell,\omega},
+ \qquad
+ [H_\ell,A_{\ell,\omega}^\dagger A_{\ell,\omega}]=0.
+\]
+Since $P$ is a sum of complete energy projections, the anticommutator with $A_{\ell,\omega}^\dagger A_{\ell,\omega}$ preserves the $P\oplus Q$ block algebra.  Under the source-to-one-target condition above, the jump term $A_{\ell,\omega}XA_{\ell,\omega}^\dagger$ also sends each diagonal source block into a diagonal target block.  Hence every complete dissipator commutes with $\mathcal E_P$.  This argument also explains why splitting or deleting only the jump term would be insufficient.
 
 For the Davies jumps $J_{\ell,\omega}=G_\ell(\omega)^{1/2}A_{\ell,\omega}$ define the positive crossing maps
 \begin{align}
@@ -402,7 +420,7 @@ Here $h_2$ is binary entropy and all constants are width independent.
 \end{lemma}
 
 \begin{proof}
-Because $P$ is a sum of complete spectral projections, the secular evolution is block diagonal:
+By the explicit compatibility condition \eqref{eq:blockcompatibility}, the secular evolution is block diagonal:
 \[
  T_\tau^{(\ell)}(\rho_\ell)
  =(1-q)\sigma_\ell\oplus q\chi_\ell.
@@ -678,7 +696,6 @@ For completeness, the fixed-period achievability statement uses a cell whose Ham
 \]
 This ledger proves equality inside a permissive collision-model class.  It consumes target-state resources and must not be conflated with ordinary work-only autonomous stabilization.
 
-\clearpage
 \small
 \begin{thebibliography}{99}
 \setlength{\itemsep}{0.15em}

@@ -11,5 +11,7 @@ This revision responds to independent technical criticism of the first public ve
 5. **Free-energy sandwich.** The logical terms carry their required factor of `tau`; Duhamel control, logical faithfulness, bounded energy flux, and the leakage-sector entropy bound are shown explicitly.
 6. **Interacting persistence.** The former proof sketch is replaced by a conditional theorem with four named inputs: an isolated band, a number-preserving quasi-local spectral flow, a model-specific free-endpoint edge estimate, and a summable flow generator. The truncation radius, occupation response, two-rail reduction, and commutator bound are explicit.
 7. **Priority boundary.** Prior work on operational entanglement of half-filled SSH edge states is now cited. Novelty is restricted to the leakage sum rule and its spectral-filter consequences.
+8. **Block compatibility.** Spectral isolation is no longer claimed to imply exact `P ⊕ Q` invariance. The manuscript separately assumes that block dephasing commutes with the Davies generator, gives a sufficient block-homogeneous criterion, and explains why a shared Bohr block can otherwise create `P–Q` coherence.
+9. **Exact-filter generator.** The reference evolution is defined by deleting complete Lindblad dissipators, including their anticommutator terms. It is therefore normalized and trace preserving.
 
 The exact free identity and numerical outputs are unchanged.

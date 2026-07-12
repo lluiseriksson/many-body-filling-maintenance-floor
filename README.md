@@ -41,7 +41,7 @@ GitHub Actions runs the checks, regenerates the figure, builds the manuscript wi
 
 ## Epistemic separation
 
-The analytic proofs are in the manuscript. The exact-diagonalization results are diagnostics, not proofs of the interaction-stability theorem. The exact exponent equality is proved for the free filled SSH family. The interacting results prove a static identity, a local spectral-window theorem, and a conditional stability result under a symmetry-preserving uniformly gapped path. Exponent zero at `q=0` permits subexponential decay; a positive maintenance floor additionally requires `liminf epsilon_ell > 0`. No uniform pre-Davies weak-coupling limit, autonomous work-only optimum, or proof-assistant formalization is claimed.
+The analytic proofs are in the manuscript. The exact-diagonalization results are diagnostics, not proofs of the interaction-stability theorem. The exact exponent equality is proved for the free filled SSH family under an explicit Davies block-compatibility condition; spectral isolation alone is not used to infer that condition. The interacting results prove a static identity, a local spectral-window theorem, and a conditional stability result under a symmetry-preserving uniformly gapped path. Exponent zero at `q=0` permits subexponential decay; a positive maintenance floor additionally requires `liminf epsilon_ell > 0`. No uniform pre-Davies weak-coupling limit, autonomous work-only optimum, or proof-assistant formalization is claimed.
 
 The manuscript and supporting package were prepared with AI assistance and reviewed by the author, who is responsible for all claims.
 
