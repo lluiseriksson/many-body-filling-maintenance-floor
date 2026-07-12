@@ -37,7 +37,8 @@ def main() -> None:
         r"\begin{lemma}[Local spectral window]",
         r"W_{\mathrm{leak}}^{\mathrm{int}}",
         "The theorem deliberately claims a perturbative neighborhood",
-        r"\mathcal E_P\widetilde{\cL}_\ell",
+        r"\mathcal E_P\widetilde{\cL}_\ell\mathcal E_P",
+        "The criterion need not imply the stronger commutation relation",
         "complete Lindblad dissipator",
         r"\liminf_{\ell\to\infty}\epsilon_\ell>0",
     ]
