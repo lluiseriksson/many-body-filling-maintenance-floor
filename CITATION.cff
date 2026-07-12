@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Many-Body Filling Turns Soft Spectral Leakage into a Maintenance Floor: Exact Filled-SSH Sum Rules and an Interaction-Stable Obstruction"
+type: article
+authors:
+  - family-names: Eriksson
+    given-names: Lluis
+date-released: 2026-07-13
+license: CC-BY-4.0
+repository-code: "https://github.com/lluiseriksson/many-body-filling-maintenance-floor"
+abstract: "Finite filling converts remote SSH support leakage into an order-one particle-hole floor and changes the soft-filter maintenance exponent to min{4m,q}."
