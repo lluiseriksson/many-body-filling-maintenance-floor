@@ -68,7 +68,7 @@ For a Davies filter whose off-target tail is $\epsilon_\ell=\exp[-q\ell+o(\ell)]
  \lim_{\ell\to\infty}-\frac1\ell\log P_{\ell,\tau}
  =\min\{4m,q\},\qquad m=-\log\zeta,
 \]
-under explicit uniform envelope and resource-ledger assumptions.  A width-independent tail ($q=0$) produces a nonzero maintenance floor, rather than merely halving the membrane exponent.  Every nonzero tail also makes the exact rapid-refresh limit logarithmically singular at each fixed width.
+under explicit uniform envelope and resource-ledger assumptions.  A width-independent tail (a special case with $q=0$) produces a nonzero maintenance floor, rather than merely halving the membrane exponent.  More generally, $q=0$ means only that the decay is subexponential.  Every nonzero tail also makes the exact rapid-refresh limit logarithmically singular at each fixed width.
 
 The floor is not a free-fermion accident.  For arbitrary interacting number-conserving rails, we prove an exact static identity expressing leakage as a local occupation product minus the logical matrix element.  Uniform finite filling and remote edge indistinguishability force a positive leakage floor.  A new local spectral-window lemma then places a fixed fraction of that weight in a width-independent Bohr-frequency window using only a commutator norm.  Consequently, any bath tail bounded below on that window yields an interaction-stable Davies leakage floor.  Quasi-local spectral flow shows persistence in a neighborhood of a symmetry-preserving gapped SSH phase.  Exact diagonalization of the interacting spinless SSH chain shows that repulsive and attractive interactions change the observed edge localization exponent while the leakage is already driven close to $1/4$ at accessible widths.
 \end{abstract}
@@ -89,7 +89,7 @@ W_{\mathrm{leak}}\to\tfrac14,\\
 \Longrightarrow
 \min\{4m,q\}
 \Longrightarrow
-\text{width-independent floor when }q=0,\\
+\text{width-independent tail}\Longrightarrow\text{maintenance floor},\\
 \text{finite filling + remote edge indistinguishability}
 \Longrightarrow\text{interacting static floor},\\
 \text{interacting static floor + locality}
@@ -97,7 +97,7 @@ W_{\mathrm{leak}}\to\tfrac14,\\
 \end{gathered}
 \]
 
-The nonanalyticity of entropy at rank-deficient states is standard and is treated systematically by Grace and Guha~\cite{GraceGuha}.  Davies generators, detailed balance, and Spohn entropy production are also classical~\cite{Davies,Spohn}.  A companion paper converts first-order support leakage into a rapid-maintenance singularity and derives the dilute SSH law $\min\{4m,2m+q\}$~\cite{ErikssonLeakage}.  Existing autonomous-QEC bounds concern logical error versus engineered correction rate~\cite{ShtankoEtAl}; they do not contain the filled-background line--continuum identity proved here.  The new results are the exact filled sum rule, the exponent collapse to $\min\{4m,q\}$, the local spectral-window lemma, and the interaction-stable leakage-floor theorem.  We do not claim a microscopic weak-coupling limit uniform in $\ell$, autonomous work-only optimality, or a general proof that an arbitrary interacting SPT phase has a nonzero remote logical prefactor.
+The nonanalyticity of entropy at rank-deficient states is standard and is treated systematically by Grace and Guha~\cite{GraceGuha}.  Davies generators, detailed balance, and Spohn entropy production are also classical~\cite{Davies,Spohn}.  Half-filled SSH ladders and the operational entanglement of filled edge states have been studied by Monkman and Sirker~\cite{MonkmanSirker}; we do not claim that finite filling or its edge physics is new.  A companion paper converts first-order support leakage into a rapid-maintenance singularity and derives the dilute SSH law $\min\{4m,2m+q\}$~\cite{ErikssonLeakage}.  Existing autonomous-QEC bounds concern logical error versus engineered correction rate~\cite{ShtankoEtAl}; they do not contain the filled-background line--continuum identity proved here.  The new results are specifically the exact leakage sum rule, its Davies filter consequence, the exponent collapse to $\min\{4m,q\}$, and the local spectral-window obstruction.  We do not claim a microscopic weak-coupling limit uniform in $\ell$, autonomous work-only optimality, or a general proof that an arbitrary interacting SPT phase has a nonzero remote logical prefactor.
 
 \section{Odd SSH rails at half filling}
 
@@ -309,7 +309,49 @@ Fix a refresh period $0<\tau\le\tau_0$.  Let
  P_{\ell,\tau}
  =\frac{F(\rho_\ell)-F(T_\tau^{(\ell)}\rho_\ell)}{\tau}.
 \]
-Assume that the exactly filtered logical generator is $w_{\ell,\mathrm{far}}^2\cL_{\log,0}$ and that $\rho_\ell$ has strictly positive normalized logical entropy production.  Assume also a uniform bound on the full Davies generator and on the crossing block divided by $\epsilon_\ell$.  These are satisfied by the single boundary operator under \cref{eq:logicalenvelope,eq:tailenvelope}; degeneracy does not introduce a volume factor because the Bohr components recombine to the contraction $A_x$.
+We now make the uniformity assumptions precise.  The code projector $P=P_{L,\ell}$ is assumed to be a sum of complete spectral projections of $H_\ell$, separated from $Q=1-P$ by an isolated band.  Thus the Davies dynamics preserves the $P\oplus Q$ block decomposition even in the presence of degeneracies.  We work in the interaction picture, where the Hamiltonian commutator drops out of both $q_\ell(t)=\Tr[Q\rho_\ell(t)]$ and the dissipative trace-norm estimates.  The exactly filtered restriction is
+\[
+ P\widetilde{\cL}_\ell^{(0)}(PXP)P
+ =w_{\ell,\mathrm{far}}^2\cL_{\log,0}(X),
+\]
+and the faithful logical target has a normalized entropy-production coefficient bounded below independently of $\ell$.
+
+For the Davies jumps $J_{\ell,\omega}=G_\ell(\omega)^{1/2}A_{\ell,\omega}$ define the positive crossing maps
+\begin{align}
+ \Phi_\ell^{\mathrm{out}}(X)
+ &=\sum_\omega QJ_{\ell,\omega}PXPJ_{\ell,\omega}^\dagger Q,\\
+ \Phi_\ell^{\mathrm{in}}(Y)
+ &=\sum_\omega PJ_{\ell,\omega}QYQJ_{\ell,\omega}^\dagger P.
+\end{align}
+
+\begin{lemma}[Uniform crossing norms]\label{lem:crossingnorm}
+Under \cref{eq:tailenvelope},
+\[
+ \|\Phi_\ell^{\mathrm{out}}\|_{1\to1}
+ +\|\Phi_\ell^{\mathrm{in}}\|_{1\to1}
+ \le C_\times\epsilon_\ell.
+\]
+The interaction-picture Davies dissipator also obeys
+\[
+ \|\widetilde{\cL}_\ell\|_{1\to1}\le M_*
+\]
+with constants independent of $\ell$ and of Bohr-frequency degeneracies.
+\end{lemma}
+
+\begin{proof}
+For a positive map $\Phi(X)=\sum_jB_jXB_j^\dagger$, its induced trace norm is
+\[
+ \|\Phi\|_{1\to1}=\|\Phi^*(1)\|_\infty
+ =\left\|\sum_jB_j^\dagger B_j\right\|_\infty.
+\]
+Every $P\leftrightarrow Q$ component lies in the leakage envelope, hence
+\[
+ \sum_\omega PJ_{\ell,\omega}^\dagger QJ_{\ell,\omega}P
+ \le c_+\epsilon_\ell
+ \sum_\omega PA_{\ell,\omega}^\dagger A_{\ell,\omega}P.
+\]
+The sum on the right is a sub-sum of the energy pinching of $A_x^\dagger A_x$ and is bounded by $\|A_x\|^2P$.  This proves the outward estimate; the incoming estimate is identical, using the KMS-related upper envelope.  The same pinching identity, now without $P,Q$, bounds the completely positive and anticommutator pieces of the full dissipator by a constant multiple of $\sup_\omega G_\ell(\omega)\|A_x\|^2$.  Combining degenerate transitions inside a single $A_{\ell,\omega}$ changes neither estimate, so no number-of-modes factor appears.
+\end{proof}
 
 \begin{lemma}[Uniform fixed-time leakage]\label{lem:fixedleakage}
 There exist $\tau_0,c,C>0$, independent of $\ell$, such that
@@ -322,34 +364,69 @@ for $0<\tau\le\tau_0$ and all sufficiently large $\ell$.
 \end{lemma}
 
 \begin{proof}
-Differentiate $q_\ell(t)$ and separate the support-crossing part $\cC_\ell$.  At $t=0$, \cref{thm:daviesweights} gives $q_\ell'(0)=\Theta(\epsilon_\ell)$.  Contractivity of the CPTP semigroup in trace norm and the uniform generator bound imply
+Block preservation gives the exact balance equation
 \[
- |q_\ell'(t)-q_\ell'(0)|
- \le t\,\|\cC_\ell\|_{1\to1}\|\cL_\ell\|_{1\to1}
- \le C_0t\epsilon_\ell.
+ q_\ell'(t)
+ =\Tr\Phi_\ell^{\mathrm{out}}(P\rho_\ell(t)P)
+ -\Tr\Phi_\ell^{\mathrm{in}}(Q\rho_\ell(t)Q).
 \]
-Choose $\tau_0$ so that the remainder is at most half of the lower first-order coefficient, then integrate.
+At $t=0$, \cref{thm:daviesweights} gives
+\[
+ a_-\epsilon_\ell\le q_\ell'(0)\le a_+\epsilon_\ell.
+\]
+Contractivity and \cref{lem:crossingnorm} imply
+\begin{align*}
+ \bigl|\Tr\Phi_\ell^{\mathrm{out}}(P\rho_\ell(t)P)-q_\ell'(0)\bigr|
+ &\le C_\times\epsilon_\ell M_*t,\\
+ 0\le\Tr\Phi_\ell^{\mathrm{in}}(Q\rho_\ell(t)Q)
+ &\le C_\times\epsilon_\ell q_\ell(t).
+\end{align*}
+The upper differential inequality first gives $q_\ell(t)\le C\epsilon_\ell t$ on a width-independent interval by Gronwall.  Substitution into the lower inequality gives
+\[
+ q_\ell'(t)\ge a_-\epsilon_\ell-C_0\epsilon_\ell t-C_1\epsilon_\ell^2t.
+\]
+Choose $\tau_0$ so that the last two terms are at most $a_-\epsilon_\ell/2$, then integrate.  The upper bound follows from the corresponding upper inequality.
 \end{proof}
 
 \begin{lemma}[Free-energy sandwich]\label{lem:Fsandwich}
-For $0<\tau\le\tau_0$ and sufficiently small $\epsilon_\ell$,
+Assume in addition that all active boundary-transfer Bohr frequencies lie in a width-independent compact interval and that $\log d_{Q,\ell}\le c_d\ell$.  For $0<\tau\le\tau_0$ and sufficiently small $\epsilon_\ell$,
 \[
- c_1w_{\ell,\mathrm{far}}^2
+ c_1\tau w_{\ell,\mathrm{far}}^2
  +k_{\mathrm B}T\bigl[h_2(q_\ell(\tau))-C_1q_\ell(\tau)\bigr]
  \le \tau P_{\ell,\tau}
  \le
- C_2w_{\ell,\mathrm{far}}^2
+ C_2\tau w_{\ell,\mathrm{far}}^2
  +k_{\mathrm B}T\bigl[h_2(q_\ell(\tau))+C_3\ell q_\ell(\tau)\bigr].
 \]
 Here $h_2$ is binary entropy and all constants are width independent.
 \end{lemma}
 
 \begin{proof}
-Secular dynamics makes the logical and leakage sectors block diagonal.  Writing the evolved state as $(1-q)\sigma\oplus q\chi$ gives the exact entropy identity
+Because $P$ is a sum of complete spectral projections, the secular evolution is block diagonal:
+\[
+ T_\tau^{(\ell)}(\rho_\ell)
+ =(1-q)\sigma_\ell\oplus q\chi_\ell.
+\]
+Consequently,
 \[
  S((1-q)\sigma\oplus q\chi)=h_2(q)+(1-q)S(\sigma)+qS(\chi).
 \]
-The normalized logical dynamics contributes two-sided multiples of $w_{\ell,\mathrm{far}}^2$ by its strictly positive entropy production.  The leakage energy created by one local boundary transfer is uniformly bounded in the free model, producing the lower correction $C_1q$.  For the upper bound, $S(\chi)\le\log d_{Q,\ell}=O(\ell)$.  Trace-norm perturbation of the faithful logical block controls the remaining analytic terms.
+Let $\eta_\ell(\tau)$ be the evolution with the crossing jumps removed.  Duhamel's formula and \cref{lem:crossingnorm} give
+\[
+ \|P T_\tau^{(\ell)}(\rho_\ell)P-\eta_\ell(\tau)\|_1
+ \le C\tau\epsilon_\ell.
+\]
+The target is faithful on the two-dimensional code, so for sufficiently small $\tau_0$ both normalized logical blocks have eigenvalues bounded below by a width-independent constant.  Entropy and energy are therefore Lipschitz on this block.  Strictly positive normalized logical entropy production gives
+\[
+ c_1\tau w_{\ell,\mathrm{far}}^2
+ \le F(\rho_\ell)-F(\eta_\ell(\tau))
+ \le C_2\tau w_{\ell,\mathrm{far}}^2.
+\]
+For the leakage correction, the compact Bohr window bounds the energy transported per jump.  Equivalently, the Davies energy flux is a frequency-weighted positive sum, so its absolute crossing contribution is at most $Cq_\ell(\tau)$.  The logical-block Duhamel error is of the same order by \cref{lem:fixedleakage}.  In the entropy identity, $qS(\chi)\ge0$ gives the lower bound, while
+\[
+ qS(\chi)\le q\log d_{Q,\ell}\le c_d\ell q
+\]
+gives the upper bound.  Collecting the analytic $O(q)$ terms proves the sandwich.
 \end{proof}
 
 \begin{theorem}[Many-body exponent collapse]\label{thm:powerexponent}
@@ -359,7 +436,7 @@ Suppose $\epsilon_\ell=\exp[-q\ell+o(\ell)]$ and the assumptions above hold.  Fo
  \lim_{\ell\to\infty}-\frac1\ell\log P_{\ell,\tau}
  =\min\{4m,q\}.}
 \]
-For $q=0$ and a sufficiently weak but width-independent tail, $P_{\ell,\tau}$ is bounded below by a positive constant independent of $\ell$.
+If $q=0$, the displayed exponent is zero.  A positive width-independent lower bound on $P_{\ell,\tau}$ requires the additional condition $\liminf_{\ell\to\infty}\epsilon_\ell>0$ (and a sufficiently weak tail so that the uniform small-time estimates apply).
 \end{theorem}
 
 \begin{proof}
@@ -368,10 +445,10 @@ By \cref{eq:wfar}, the logical term has rate $4m$.  By \cref{lem:fixedleakage}, 
  h_2(q_\ell(\tau))
  =q_\ell(\tau)\log(1/q_\ell(\tau))+O(q_\ell(\tau))
 \]
-has rate $q$; polynomial factors in $\ell$ do not alter it.  The sandwich therefore gives the minimum of the two rates, including the equality case $q=4m$.  If $q=0$, choose the constant tail and $\tau_0$ small enough that the positive binary-entropy term dominates the analytic $O(q)$ correction.  The resulting lower bound is width independent.
+has rate $q$; polynomial factors in $\ell$ do not alter it.  The sandwich therefore gives the minimum of the two rates, including the equality case $q=4m$.  When $q=0$, the same bounds give exponent zero but allow subexponential decay, for example $\epsilon_\ell=1/\ell$.  If in addition $\liminf_\ell\epsilon_\ell>0$, choose $\tau_0$ and the tail amplitude small enough that the positive binary-entropy term dominates the analytic $O(q_\ell(\tau))$ correction.  Only under this additional condition is the lower bound width independent.
 \end{proof}
 
-The two limits again do not commute.  At each fixed $\ell$ and nonzero tail, $\lim_{\tau\downarrow0}P_{\ell,\tau}=\infty$.  At fixed $\tau$, the wide-width limit is zero only when $q>0$; for $q=0$ the filled system retains a floor.
+The two limits again do not commute whenever the tail remains nonzero at each fixed width.  At fixed $\ell$, $\lim_{\tau\downarrow0}P_{\ell,\tau}=\infty$.  At fixed $\tau$, $q>0$ forces the wide-width power to vanish exponentially.  When $q=0$, the exponential rate is zero: the power may vanish subexponentially, and a positive floor follows only if $\liminf_\ell\epsilon_\ell>0$.
 
 \section{An exact interacting leakage identity}
 
@@ -458,10 +535,32 @@ By \cref{thm:interactingidentity}, $W_\ell\ge\nu^2/2$ for all sufficiently large
 
 \section{Persistence under symmetry-preserving interactions}
 
-Consider a differentiable finite-range path $H_\ell(s)$, $s\in[0,s_0]$, starting at the filled SSH model and preserving particle number and particle--hole symmetry.  Assume a width-independent gap separates the two-rail logical band from the rest of the spectrum.  Standard spectral-flow results then provide quasi-local unitaries transporting the spectral band, with locality bounds uniform in volume~\cite{HastingsWen,BachmannEtAl}.  Gap stability for one-dimensional spin and fermion chains supplies concrete sufficient conditions for weak perturbations~\cite{MoonNachtergaele}.
+Consider a differentiable finite-range single-rail path $h_\ell(s)$, $s\in[0,s_0]$, starting at the filled SSH model.  We state every input used below:
+\begin{enumerate}[label=(G\arabic*)]
+\item $h_\ell(s)$ conserves number and particle--hole symmetry, and its $N=\ell$ and $N=\ell+1$ eigenstates $|g_\ell(s)\rangle,|e_\ell(s)\rangle$ form an isolated band separated from the rest of the spectrum by $\Delta_*>0$ uniformly in $s$ and $\ell$.
+\item The spectral-flow unitary $U_\ell(s)$ commutes with total number, intertwines the two sector projections, and has the uniform quasi-locality estimate
+\[
+ \inf_{O^{(r)}:\,\supp O^{(r)}\subset B_r(X)}
+ \|U_\ell(s)^\dagger O_XU_\ell(s)-O^{(r)}\|
+ \le C_F\|O_X\|F(r),
+\]
+where $F(r)$ decreases faster than every inverse power.
+\item At the free endpoint, every normalized number-lowering observable supported within distance $r$ of the far boundary satisfies
+\[
+ |\langle g_\ell(0)|O^{(r)}|e_\ell(0)\rangle|
+ \le C_0\zeta^{\ell-r}\|O^{(r)}\|.
+\]
+For the filled SSH Slater pair this follows by reducing the transition functional to the zero-mode weight in the support of $O^{(r)}$.
+\item The spectral-flow generator has a uniformly summable interaction norm.  In particular,
+\[
+ \sup_{\ell,s}\|[D_\ell(s),n_x]\|\le C_{\mathrm{occ}}<\infty,
+\]
+where $\partial_sU_\ell(s)=-iD_\ell(s)U_\ell(s)$.
+\end{enumerate}
+Conditions (G1), (G2), and (G4) are the standard outputs of a symmetry-preserving uniformly gapped spectral flow~\cite{HastingsWen,BachmannEtAl}; (G3) is the model-specific endpoint input.  Gap-stability theorems provide sufficient conditions for (G1) in classes of weakly perturbed one-dimensional spin and fermion chains~\cite{MoonNachtergaele}.  We do not assert that those sufficient conditions cover every value of the interacting SSH coupling used in the numerical section.
 
-\begin{proposition}[Small-interaction persistence]\label{prop:persistence}
-Under the gapped-path assumptions above, there exists $s_*>0$, independent of $\ell$, such that for $0\le s\le s_*$:
+\begin{theorem}[Conditional gapped-path persistence]\label{prop:persistence}
+Under (G1)--(G4), there exists $s_*>0$, independent of $\ell$, such that for $0\le s\le s_*$:
 \begin{enumerate}
 \item the transported edge matrix element $\alpha_\ell(s)$ tends to zero faster than any inverse power of $\ell$;
 \item $n_{e,\ell}(s),v_{g,\ell}(s)\ge1/4$ for all sufficiently large $\ell$;
@@ -469,15 +568,46 @@ Under the gapped-path assumptions above, there exists $s_*>0$, independent of $\
 \item the local spectral-window constant can be chosen uniformly in $s$ and $\ell$.
 \end{enumerate}
 Thus a width-independent soft tail produces a maintenance floor throughout this interaction neighborhood.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
-Let $U_\ell(s)$ be the spectral-flow unitary.  The dressed far-boundary annihilator $U_\ell(s)^\dagger a_xU_\ell(s)$ is quasi-local near $x$, with tails decreasing faster than any power uniformly in $\ell$.  At $s=0$, matrix elements between the two edge-charge sectors for an observable supported a distance $r$ from the far boundary are bounded by the SSH zero-mode tail at distance $\ell-r$.  Splitting the dressed operator into a radius-$r$ truncation and its quasi-local remainder, then optimizing $r$, proves item 1.
+Number conservation allows phases to be chosen so that
+\[
+ |g_\ell(s)\rangle=U_\ell(s)|g_\ell(0)\rangle,
+ \qquad
+ |e_\ell(s)\rangle=U_\ell(s)|e_\ell(0)\rangle.
+\]
+Let $a_x^{(s,r)}$ be the radius-$r$ approximant from (G2).  Conditions (G2)--(G3) give the explicit bound
+\begin{align}
+ |\alpha_\ell(s)|
+ &=|\langle g_\ell(0)|U_\ell(s)^\dagger a_xU_\ell(s)|e_\ell(0)\rangle|\\
+ &\le C_0\zeta^{\ell-r}\|a_x^{(s,r)}\|+C_FF(r)\\
+ &\le C_0(1+C_FF(r))\zeta^{\ell-r}+C_FF(r).
+\end{align}
+Choose $r=\lfloor\ell/2\rfloor$.  The first term is exponentially small and the second decreases faster than every inverse power, proving item 1.  The same construction is performed on each rail; their product gives the two-rail logical matrix element in \cref{thm:interactingidentity}.
 
-At $s=0$, the two relevant local occupation factors converge to $1/2$.  Quasi-local linear response bounds their change by $C|s|$ uniformly in volume.  Choose $s_*$ so that $C s_*<1/4$, proving item 2.  Item 3 follows from \cref{thm:interactingidentity}.  Finally, finite range and uniform local interaction norms bound $[H_\ell(s),S_x]$ uniformly, so \cref{lem:spectralwindow} gives item 4.
+For the occupation, differentiation along the flow yields
+\[
+ \left|\frac{d}{ds}\langle e_\ell(s)|n_x|e_\ell(s)\rangle\right|
+ =|\langle e_\ell(s)|i[D_\ell(s),n_x]|e_\ell(s)\rangle|
+ \le C_{\mathrm{occ}}.
+\]
+The same estimate holds for $\langle g_\ell(s)|(1-n_x)|g_\ell(s)\rangle$.  Both quantities converge to $1/2$ at $s=0$.  After increasing the minimum-width threshold if needed, they are at least $1/2-o(1)-C_{\mathrm{occ}}s$.  Taking
+\[
+ s_*<\frac{1}{4C_{\mathrm{occ}}}
+\]
+proves item 2.  Item 3 now follows from the exact interacting identity and item 1.
+
+Finally, finite range and a uniform local interaction norm $J_*$ imply
+\[
+ \|[H_\ell(s),S_x]\|
+ \le2\|S_x\|\sum_{Z:\,Z\cap\supp S_x\ne\varnothing}\|h_Z(s)\|
+ \le K_*,
+\]
+because only a width-independent number of terms meet the two-site support of $S_x$.  The logical splitting $\delta_\ell(s)$ is bounded on the isolated compact path, so the centered commutator constant in \cref{lem:spectralwindow} is uniform.  This proves item 4.
 \end{proof}
 
-The proposition deliberately claims a perturbative neighborhood, not an entire interacting phase.  Extending the lower filling bound and the remote matrix-element control along an arbitrary gapped path requires phase-specific input.  The leakage mechanism itself, however, is independent of integrability and of a one-particle reduction.
+The theorem deliberately claims a perturbative neighborhood, not an entire interacting phase.  Extending the lower filling bound and the remote matrix-element control along an arbitrary gapped path requires phase-specific input.  The leakage mechanism itself, however, is independent of integrability and of a one-particle reduction.
 
 \section{Exact-diagonalization diagnostics}
 
@@ -548,6 +678,7 @@ For completeness, the fixed-period achievability statement uses a cell whose Ham
 \]
 This ledger proves equality inside a permissive collision-model class.  It consumes target-state resources and must not be conflated with ordinary work-only autonomous stabilization.
 
+\clearpage
 \small
 \begin{thebibliography}{99}
 \setlength{\itemsep}{0.15em}
@@ -574,6 +705,12 @@ W.~P. Su, J.~R. Schrieffer, and A.~J. Heeger,
 ``Solitons in polyacetylene,''
 \emph{Phys. Rev. Lett.} \textbf{42}, 1698--1701 (1979),
 doi:10.1103/PhysRevLett.42.1698.
+
+\bibitem{MonkmanSirker}
+K. Monkman and J. Sirker,
+``Operational entanglement of symmetry-protected topological edge states,''
+\emph{Phys. Rev. Research} \textbf{2}, 043191 (2020),
+arXiv:2005.13026.
 
 \bibitem{ErikssonLeakage}
 L. Eriksson,

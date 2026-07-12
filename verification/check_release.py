@@ -36,7 +36,7 @@ def main() -> None:
         r"\begin{theorem}[Interacting occupation--leakage identity]",
         r"\begin{lemma}[Local spectral window]",
         r"W_{\mathrm{leak}}^{\mathrm{int}}",
-        "The proposition deliberately claims a perturbative neighborhood",
+        "The theorem deliberately claims a perturbative neighborhood",
     ]
     for token in required:
         require(token in tex, f"missing source invariant: {token}")
@@ -55,7 +55,7 @@ def main() -> None:
             require(phrase not in log, f"build-log failure: {phrase}")
 
     reader = PdfReader(str(pdf_path))
-    require(len(reader.pages) == 10, f"expected 10 pages, found {len(reader.pages)}")
+    require(len(reader.pages) == 13, f"expected 13 pages, found {len(reader.pages)}")
     metadata = reader.metadata or {}
     require("Many-Body Filling Turns Soft Spectral Leakage" in str(metadata.get("/Title", "")), "PDF title metadata")
     require("Lluis Eriksson" in str(metadata.get("/Author", "")), "PDF author metadata")

@@ -22,6 +22,7 @@ At the remote boundary the first term decays as `zeta^(4 ell)`, while the second
 - `paper/main.pdf` — release PDF.
 - `paper/many_body_filling_phase_diagram.png` — manuscript figure.
 - `claims/CLAIM_MAP.md` — claim-by-claim proof and assumption map.
+- `REVISION_NOTES.md` — audit trail for the strengthened second version.
 - `verification/verify.py` — deterministic free and interacting checks.
 - `verification/explore_interacting.py` — exact Fock-space construction and diagonalization.
 - `verification/make_figure.py` — deterministic figure generator.
@@ -40,7 +41,7 @@ GitHub Actions runs the checks, regenerates the figure, builds the manuscript wi
 
 ## Epistemic separation
 
-The analytic proofs are in the manuscript. The exact-diagonalization results are diagnostics, not proofs of the interaction-stability proposition. The exact exponent equality is proved for the free filled SSH family. The interacting results prove a static identity, a local spectral-window theorem, and a conditional stability result under a symmetry-preserving uniformly gapped path. No uniform pre-Davies weak-coupling limit, autonomous work-only optimum, or proof-assistant formalization is claimed.
+The analytic proofs are in the manuscript. The exact-diagonalization results are diagnostics, not proofs of the interaction-stability theorem. The exact exponent equality is proved for the free filled SSH family. The interacting results prove a static identity, a local spectral-window theorem, and a conditional stability result under a symmetry-preserving uniformly gapped path. Exponent zero at `q=0` permits subexponential decay; a positive maintenance floor additionally requires `liminf epsilon_ell > 0`. No uniform pre-Davies weak-coupling limit, autonomous work-only optimum, or proof-assistant formalization is claimed.
 
 The manuscript and supporting package were prepared with AI assistance and reviewed by the author, who is responsible for all claims.
 
