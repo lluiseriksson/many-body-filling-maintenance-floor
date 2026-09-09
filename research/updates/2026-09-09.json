@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "reviewed_on": "2026-09-09",
+  "window": {
+    "start": "2026-09-03",
+    "end": "2026-09-09",
+    "calendar_week_start": "2026-09-07"
+  },
+  "coverage": "targeted, non-exhaustive",
+  "repository_card": {
+    "repository": "lluiseriksson/many-body-filling-maintenance-floor",
+    "source_ids": [
+      "2609.07832",
+      "2609.04117",
+      "2608.31001"
+    ],
+    "local_anchors": [
+      "README.md",
+      "claims/CLAIM_MAP.md",
+      "verification/verify.py"
+    ],
+    "frontier": "The filled-SSH identity is exact in its stated model; the maintenance exponent carries the Davies envelope and invariance condition.",
+    "bridge_hypothesis": "Compare conserved slow-mode reconstructions and gauge-bath Zeno effects with filled-sector leakage. Dictionary: population/filling constraints -> available transition sectors. Restricted typicality does not preserve the block algebra or establish the two-sided rate envelope.",
+    "next_finite_task": "Tabulate logical and nonlogical weights versus filling, then repeat a small-system rate scan over bath strength while directly checking the block-invariance residual. Distinguish static sum rules from fitted rates.",
+    "falsifier": "A nonzero invariance residual blocks the stated exponent transfer. Nonmonotonic bath dependence or loss of uniform spectral isolation invalidates an extrapolated maintenance floor.",
+    "related_repositories": [
+      "support-leakage-rapid-maintenance",
+      "additive-gkls-leaky-boundary",
+      "aqft-split-inclusion-series"
+    ],
+    "proposal_status": "speculative; not executed or formally verified",
+    "eliminated_hypotheses": [],
+    "inspected_commit": "16693e410104119f0f48274410fefe0cee309e57"
+  },
+  "sources": [
+    {
+      "id": "arxiv:2609.07832",
+      "arxiv_id": "2609.07832",
+      "title": "Restricted typicality in non-equilibrium quantum many-body systems",
+      "authors": [
+        "Pawlik, Konrad",
+        "Sierant, Piotr",
+        "Zakrzewski, Jakub"
+      ],
+      "first_submitted": "2026-09-07",
+      "latest_revision": "2026-09-07",
+      "reviewed_version": "v1",
+      "url": "https://arxiv.org/abs/2609.07832v1",
+      "doi": "10.48550/arXiv.2609.07832",
+      "verified_on": "2026-09-09",
+      "recency": "new-this-calendar-week",
+      "publication_status": "preprint; peer-review status not established in this sweep",
+      "evidence_level": "literature",
+      "review_depth": "Abstract and submission history",
+      "source_claim": "Restricted typicality reconstructs nonlinear state diagnostics from slow modes in non-equilibrium many-body systems with separated time scales.",
+      "limits": "Reconstruction of entropy diagnostics is not a uniform quantum recovery channel. Transport and time-scale separation do not prove Davies block invariance or a maintenance exponent.",
+      "tags": [
+        "many-body",
+        "slow-modes",
+        "entropy"
+      ],
+      "abstract_page_sha256": "6c08fa73f8525d2b9cc3d5a53df5efc557914062d7996cae99ffe81f6b36b662",
+      "reviewed_full_text_sha256": null,
+      "reuse": "Bibliographic metadata and original synthesis only; no permission to train on linked full text is inferred."
+    },
+    {
+      "id": "arxiv:2609.04117",
+      "arxiv_id": "2609.04117",
+      "title": "Non-Abelian string melting and thermalization in an open lattice gauge theory",
+      "authors": [
+        "Verde, Erick Parra",
+        "Cataldi, Giovanni",
+        "Kühn, Stefan",
+        "Magnifico, Giuseppe",
+        "Halimeh, Jad C."
+      ],
+      "first_submitted": "2026-09-03",
+      "latest_revision": "2026-09-03",
+      "reviewed_version": "v1",
+      "url": "https://arxiv.org/abs/2609.04117v1",
+      "doi": "10.48550/arXiv.2609.04117",
+      "verified_on": "2026-09-09",
+      "recency": "new-in-trailing-week",
+      "publication_status": "preprint; peer-review status not established in this sweep",
+      "evidence_level": "literature",
+      "review_depth": "v1: model, thermalization discussion and strong-dephasing reduction",
+      "source_claim": "A tensor-network study couples 1+1D SU(2) gauge theory with matter to a gauge-preserving Lindblad bath. It finds nonmonotonic relaxation and derives an exclusion-process description in a strong-dephasing limit.",
+      "limits": "This is an open-system finite/truncated lattice setting, not pure 4D Euclidean Yang-Mills. A Liouvillian relaxation rate is not automatically a Hamiltonian gap, and the strong-dephasing expansion has its own regime.",
+      "tags": [
+        "yang-mills",
+        "lindblad",
+        "zeno",
+        "tensor-networks"
+      ],
+      "abstract_page_sha256": "5bd8e4f32445c083e75584d29d5ef41d78ed422d5c848b77e706f123fb496a82",
+      "reviewed_full_text_sha256": "7eec747973d16173df4cf1775f12720a3e7ba56b4fcdf158063e15d681b8fa00",
+      "reuse": "Bibliographic metadata and original synthesis only; no permission to train on linked full text is inferred."
+    },
+    {
+      "id": "arxiv:2608.31001",
+      "arxiv_id": "2608.31001",
+      "title": "Work Extraction Across a Thermodynamic Hierarchy in Quantum Many-Body Systems",
+      "authors": [
+        "Hokkyo, Akihiro",
+        "Ueda, Masahito"
+      ],
+      "first_submitted": "2026-08-31",
+      "latest_revision": "2026-08-31",
+      "reviewed_version": "v1",
+      "url": "https://arxiv.org/abs/2608.31001v1",
+      "doi": "10.48550/arXiv.2608.31001",
+      "verified_on": "2026-09-09",
+      "recency": "background",
+      "publication_status": "preprint; peer-review status not established in this sweep",
+      "evidence_level": "literature",
+      "review_depth": "Abstract and submission history",
+      "source_claim": "Hokkyo and Ueda formulate a hierarchy of allowed operations for work extraction and bound additional work through differences of entropy densities or mutual-information density.",
+      "limits": "An extraction advantage is not an achievable maintenance-power baseline. Specify spatial access, control duration and connectivity. First posted 31 August.",
+      "tags": [
+        "thermodynamics",
+        "locality",
+        "mutual-information"
+      ],
+      "abstract_page_sha256": "2b4d3c17345aff8f12d0596945341e101914d7a9dc3457b32e5763e5bd5387d7",
+      "reviewed_full_text_sha256": null,
+      "reuse": "Bibliographic metadata and original synthesis only; no permission to train on linked full text is inferred."
+    }
+  ]
+}

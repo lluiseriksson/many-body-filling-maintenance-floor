@@ -1,5 +1,8 @@
 # Many-Body Filling Turns Soft Spectral Leakage into a Maintenance Floor
 
+<!-- RESEARCH-UPDATE-2026-09-09 -->
+> **Research update · 9 September 2026:** [verified source cards, limits and next experiments](research/updates/2026-09-09.md) · [machine-readable dossier](research/updates/2026-09-09.json).
+
 Reproducibility package for
 
 > **Many-Body Filling Turns Soft Spectral Leakage into a Maintenance Floor**
