@@ -58,7 +58,7 @@ Code is MIT licensed. The paper, figure, claim map, and documentation are CC BY 
 This repository accompanies the following paper by Lluis Eriksson.
 AIRR status is the archive's own label for the record; it is not peer review.
 
-| Title | AIRR | ai.viXra | AIRR status |
-|---|---|---|---|
-| Many-Body Filling Turns Soft Spectral Leakage into a Maintenance Floor: Exact Filled-SSH Sum Rules and an Interaction-Stable Obstruction | [ARR-2026-6YFENMGGBY9PPBF1](https://airr.science/papers/ARR-2026-6YFENMGGBY9PPBF1/) | [2607.0038](https://www.ai.vixra.org/abs/2607.0038) | archived |
+| Title | AIRR | AIRR status |
+|---|---|---|
+| Many-Body Filling Turns Soft Spectral Leakage into a Maintenance Floor: Exact Filled-SSH Sum Rules and an Interaction-Stable Obstruction | [ARR-2026-6YFENMGGBY9PPBF1](https://airr.science/papers/ARR-2026-6YFENMGGBY9PPBF1/) | archived |
 <!-- papers-index:end -->
